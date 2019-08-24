@@ -13,10 +13,11 @@ public class XStreamPersonExample {
                 ).build();
 
         xstream.alias("person", Person.class);
-
+        xstream.alias("custom-phone", CustomPhoneNumber.class);
         String javierXML = xstream.toXML(javier);
 
         System.out.println(javierXML);
+
 
         Person javierClonado = (Person)xstream.fromXML(javierXML);
 
