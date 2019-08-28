@@ -1,7 +1,12 @@
+buildscript {
+	ext {
+		lombokVersion = '1.18.8'
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.1.7.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.7.RELEASE'
-	id 'net.ltgt.apt' version '0.10'
 	id 'java'
 }
 
@@ -16,8 +21,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	compileOnly 'org.projectlombok:lombok:1.18.2'
-	apt 'org.projectlombok:lombok:1.18.2'
+	compileOnly("org.projectlombok:lombok:${lombokVersion}")
+	testCompileOnly("org.projectlombok:lombok:${lombokVersion}")
+	annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+	testAnnotationProcessor("org.projectlombok:lombok:${lombokVersion}")
 	implementation 'com.thoughtworks.xstream:xstream:1.4.11.1'
 	compile 'com.google.code.gson:gson:2.8.5'
 
