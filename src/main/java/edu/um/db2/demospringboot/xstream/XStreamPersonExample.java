@@ -1,5 +1,6 @@
 package edu.um.db2.demospringboot.xstream;
 
+import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 import com.thoughtworks.xstream.XStream;
 
 public class XStreamPersonExample {
@@ -22,5 +23,7 @@ public class XStreamPersonExample {
         Person javierClonado = (Person)xstream.fromXML(javierXML);
 
         System.out.println(javierClonado);
+
+
     }
 }
