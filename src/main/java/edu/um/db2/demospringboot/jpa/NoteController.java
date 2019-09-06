@@ -1,9 +1,7 @@
 package edu.um.db2.demospringboot.jpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class NoteController {
@@ -11,7 +9,17 @@ public class NoteController {
     NoteRepository noteRepository;
 
     @PostMapping("/note")
+    @RequestMapping(path="/note", method = RequestMethod.POST)
     public void save(@RequestBody Note note) {
         noteRepository.save(note);
     }
+
+    @PutMapping("/note/{id}")
+    public void update(@PathVariable("id") Long id, @RequestBody Note note) {
+        Note existingNote = noteRepository.getOne(id);
+        existingNote.setContent(note.getContent());
+        existingNote.setTitle(note.getTitle());
+        noteRepository.save(existingNote);
+    }
+
 }
