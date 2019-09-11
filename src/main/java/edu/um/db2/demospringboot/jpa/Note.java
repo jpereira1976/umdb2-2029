@@ -1,5 +1,6 @@
 package edu.um.db2.demospringboot.jpa;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name="notes")
 @Data
+@Builder
 public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

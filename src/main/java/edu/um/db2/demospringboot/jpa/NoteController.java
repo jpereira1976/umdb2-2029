@@ -10,8 +10,9 @@ public class NoteController {
 
     @PostMapping("/note")
     @RequestMapping(path="/note", method = RequestMethod.POST)
-    public void save(@RequestBody Note note) {
+    public String save(@RequestBody Note note) {
         noteRepository.save(note);
+        return "{\"id\":" + note.getId() + "}";
     }
 
     @PutMapping("/note/{id}")
