@@ -3,6 +3,8 @@ package edu.um.db2.demospringboot.jpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class NoteController {
     @Autowired
@@ -23,4 +25,8 @@ public class NoteController {
         noteRepository.save(existingNote);
     }
 
+    @GetMapping("/note/title/{title}")
+    List<Note> notesByTitle(@PathVariable("title") String title) {
+        return noteRepository.findByTitle(title);
+    }
 }

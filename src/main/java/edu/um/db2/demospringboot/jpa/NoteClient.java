@@ -36,10 +36,9 @@ public class NoteClient {
         RestTemplate restTemplate =
                 new RestTemplate();
         HttpEntity<Note> body = new HttpEntity<>(
-                Note.builder().title("title template")
-                        .content("content template").build());
+                new Note(null, "title template", "content template"));
         ResponseEntity<String> response =
-                restTemplate.exchange("http://localhost:8080/note",
+                restTemplate.exchange("http://10.252.254.8:8080/note",
                         HttpMethod.POST, body, String.class);
         System.out.println("RestTemplate respone : " + response.getBody());
     }
