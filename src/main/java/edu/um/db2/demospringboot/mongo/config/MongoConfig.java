@@ -2,6 +2,7 @@ package edu.um.db2.demospringboot.mongo.config;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
+import com.mongodb.MongoClientURI;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,20 +13,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MongoConfig {
 
-    @Value("${mongo.host:localhost}")
-    String host;
-    @Value("${mongo.port:27017}")
-    int port;
-    @Value("${mongo.database:test}")
+    @Value("${mongo.uri:mongodb://localhost:27017,localhost:27018}")
+    String uri;
+    @Value("${mongo.database:prueba}")
     String databaseName;
 
     @Bean
     public MongoClient mongo() throws Exception {
-        return new MongoClient(new ServerAddress(host, port),
-                MongoClientOptions.builder()
-                        .maxConnectionIdleTime(60*1000)
-                        .maxConnectionLifeTime(60*1000)
-                        .build());
+        return new MongoClient(
+                new MongoClientURI(uri));
     }
 
     protected String getDatabaseName() {
