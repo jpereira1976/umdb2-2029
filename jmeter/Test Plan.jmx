@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">50000</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add transaccion" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;prefix&quot;: &quot;SETT&quot;,&#xd;
+	&quot;postalZone&quot;: &quot;250252&quot;,&#xd;
+	&quot;closedDate&quot;: &quot;Oct 31, 2019 4:45:13 PM&quot;,&#xd;
+	&quot;openDate&quot;: &quot;Oct 31, 2019 4:45:13 PM&quot;,&#xd;
+	&quot;resolutionApprovalNumber&quot;: 18760000001,&#xd;
+	&quot;resolutionApprovalYear&quot;: &quot;2019&quot;,&#xd;
+	&quot;paymentWay&quot;: &quot;0&quot;,&#xd;
+	&quot;subTotal&quot;: &quot;87196.86&quot;,&#xd;
+	&quot;discount&quot;: &quot;101310.00&quot;,&#xd;
+	&quot;invoice&quot;: &quot;2504656&quot;,&#xd;
+	&quot;local&quot;: &quot;B1&quot;,&#xd;
+	&quot;pos&quot;: &quot;7&quot;,&#xd;
+	&quot;clientName&quot;: &quot;Facundo  Factura Prueba&quot;,&#xd;
+	&quot;clientNit&quot;: &quot;11163&quot;,&#xd;
+	&quot;clientAddress&quot;: &quot;KR 8 # 6 - 55&quot;,&#xd;
+	&quot;clientCountry&quot;: &quot;CO&quot;,&#xd;
+	&quot;clientDeparmentDane&quot;: &quot;0&quot;,&#xd;
+	&quot;clientCityDane&quot;: &quot;25899&quot;,&#xd;
+	&quot;clientEmail&quot;: &quot;valido@gmail.com&quot;,&#xd;
+	&quot;clientIdType&quot;: &quot;12&quot;,&#xd;
+	&quot;clientPhoneNumber&quot;: &quot;0&quot;,&#xd;
+	&quot;clientCheckNumber&quot;: &quot;0&quot;,&#xd;
+	&quot;taxpayerType&quot;: &quot;1&quot;,&#xd;
+	&quot;clientType&quot;: 2,&#xd;
+	&quot;total&quot;: &quot;101310.00&quot;,&#xd;
+	&quot;totalRetIva&quot;: &quot;0&quot;,&#xd;
+	&quot;totalRetIca&quot;: &quot;0&quot;,&#xd;
+	&quot;totalRet&quot;: &quot;0&quot;,&#xd;
+	&quot;localCode&quot;: &quot;AKB68&quot;,&#xd;
+	&quot;orderID&quot;: &quot;0&quot;,&#xd;
+	&quot;monedaIso&quot;: &quot;COP&quot;,&#xd;
+	&quot;reference&quot;: &quot;0&quot;,&#xd;
+	&quot;dispatchLocal&quot;: &quot;0&quot;,&#xd;
+	&quot;totalRetCree&quot;: &quot;0&quot;,&#xd;
+	&quot;dispatch&quot;: &quot;0&quot;,&#xd;
+	&quot;automaticEmission&quot;: 1,&#xd;
+	&quot;eBillWithoutAgreement&quot;: 1,&#xd;
+	&quot;physicalAgreement&quot;: 1,&#xd;
+	&quot;orderControl&quot;: &quot;0&quot;,&#xd;
+	&quot;eBillAdmNumerosFactura&quot;: 0,&#xd;
+	&quot;documentType&quot;: &quot;sale&quot;,&#xd;
+	&quot;invoiceType&quot;: &quot;FMB&quot;,&#xd;
+	&quot;products&quot;: [{&#xd;
+			&quot;uid&quot;: 0,&#xd;
+			&quot;ean&quot;: &quot;7705946297516&quot;,&#xd;
+			&quot;description&quot;: &quot;Impuesto Bolsa Plastica&quot;,&#xd;
+			&quot;quantity&quot;: 1.0,&#xd;
+			&quot;unitPrice&quot;: 30.0,&#xd;
+			&quot;price&quot;: 30.0,&#xd;
+			&quot;measureId&quot;: &quot;94&quot;,&#xd;
+			&quot;ivaTaxId&quot;: &quot;12&quot;,&#xd;
+			&quot;stampTax&quot;: 30,&#xd;
+			&quot;kit&quot;: false,&#xd;
+			&quot;bagItem&quot;: true,&#xd;
+			&quot;concession&quot;: false,&#xd;
+			&quot;referenceData&quot;: &quot;890900943-1&quot;,&#xd;
+			&quot;subClient&quot;: &quot;Colombiana de Comercio S.A.&quot;,&#xd;
+			&quot;discounts&quot;: [],&#xd;
+			&quot;tax&quot;: {&#xd;
+				&quot;uid&quot;: &quot;0&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 0.00,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 0.00,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 0.00,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 0.00,&#xd;
+								&quot;taxAmount&quot;: 0.00,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 0.00,&#xd;
+								&quot;percentage&quot;: 0.000,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;12&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}, {&#xd;
+						&quot;name&quot;: &quot;Bolsas&quot;,&#xd;
+						&quot;taxAmount&quot;: 30,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 0.0,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 30,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 0.0,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 0.0,&#xd;
+								&quot;taxAmount&quot;: 30,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 30,&#xd;
+								&quot;percentage&quot;: 0,&#xd;
+								&quot;unitFixTaxAmount&quot;: 30,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;22&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;22&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;Bolsas&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 30.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 0.00,&#xd;
+					&quot;taxExclusiveAmount&quot;: 0.00,&#xd;
+					&quot;taxInclusiveAmount&quot;: 30.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 30.0&#xd;
+				}&#xd;
+			}&#xd;
+		}, {&#xd;
+			&quot;uid&quot;: 1,&#xd;
+			&quot;ean&quot;: &quot;7703110043983&quot;,&#xd;
+			&quot;description&quot;: &quot;Delantal Estampado Surtido&quot;,&#xd;
+			&quot;quantity&quot;: 1.0,&#xd;
+			&quot;unitPrice&quot;: 5900.0,&#xd;
+			&quot;price&quot;: 5900.0,&#xd;
+			&quot;measureId&quot;: &quot;94&quot;,&#xd;
+			&quot;ivaTaxId&quot;: &quot;3&quot;,&#xd;
+			&quot;stampTax&quot;: 0,&#xd;
+			&quot;kit&quot;: false,&#xd;
+			&quot;bagItem&quot;: false,&#xd;
+			&quot;concession&quot;: false,&#xd;
+			&quot;referenceData&quot;: &quot;890900943-1&quot;,&#xd;
+			&quot;subClient&quot;: &quot;Colombiana de Comercio S.A.&quot;,&#xd;
+			&quot;discounts&quot;: [],&#xd;
+			&quot;tax&quot;: {&#xd;
+				&quot;uid&quot;: &quot;1&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 942.02,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 4957.98,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 4957.98,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 4957.98,&#xd;
+								&quot;taxAmount&quot;: 942.02,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 942.02,&#xd;
+								&quot;percentage&quot;: 0.190,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;3&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 5900.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 4957.98,&#xd;
+					&quot;taxExclusiveAmount&quot;: 4957.98,&#xd;
+					&quot;taxInclusiveAmount&quot;: 5900.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 5900.0&#xd;
+				}&#xd;
+			}&#xd;
+		}, {&#xd;
+			&quot;uid&quot;: 2,&#xd;
+			&quot;ean&quot;: &quot;7702870002087&quot;,&#xd;
+			&quot;description&quot;: &quot;Tomi Granulado 8 g x 8und&quot;,&#xd;
+			&quot;quantity&quot;: 1.0,&#xd;
+			&quot;unitPrice&quot;: 5990.0,&#xd;
+			&quot;price&quot;: 5990.0,&#xd;
+			&quot;measureId&quot;: &quot;94&quot;,&#xd;
+			&quot;ivaTaxId&quot;: &quot;9&quot;,&#xd;
+			&quot;stampTax&quot;: 0,&#xd;
+			&quot;kit&quot;: false,&#xd;
+			&quot;bagItem&quot;: false,&#xd;
+			&quot;concession&quot;: false,&#xd;
+			&quot;referenceData&quot;: &quot;890900943-1&quot;,&#xd;
+			&quot;subClient&quot;: &quot;Colombiana de Comercio S.A.&quot;,&#xd;
+			&quot;discounts&quot;: [],&#xd;
+			&quot;tax&quot;: {&#xd;
+				&quot;uid&quot;: &quot;2&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 0.00,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 5990.00,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 5990.00,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 5990.00,&#xd;
+								&quot;taxAmount&quot;: 0.00,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 0.00,&#xd;
+								&quot;percentage&quot;: 0.000,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;9&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 5990.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 5990.00,&#xd;
+					&quot;taxExclusiveAmount&quot;: 5990.00,&#xd;
+					&quot;taxInclusiveAmount&quot;: 5990.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 5990.0&#xd;
+				}&#xd;
+			}&#xd;
+		}, {&#xd;
+			&quot;uid&quot;: 3,&#xd;
+			&quot;ean&quot;: &quot;7702168635508&quot;,&#xd;
+			&quot;description&quot;: &quot;Crema de Ron Cherrs 750ml&quot;,&#xd;
+			&quot;quantity&quot;: 1.0,&#xd;
+			&quot;unitPrice&quot;: 30590.0,&#xd;
+			&quot;price&quot;: 30590.0,&#xd;
+			&quot;measureId&quot;: &quot;94&quot;,&#xd;
+			&quot;ivaTaxId&quot;: &quot;9&quot;,&#xd;
+			&quot;stampTax&quot;: 2146,&#xd;
+			&quot;kit&quot;: false,&#xd;
+			&quot;bagItem&quot;: false,&#xd;
+			&quot;concession&quot;: false,&#xd;
+			&quot;referenceData&quot;: &quot;890900943-1&quot;,&#xd;
+			&quot;subClient&quot;: &quot;Colombiana de Comercio S.A.&quot;,&#xd;
+			&quot;discounts&quot;: [],&#xd;
+			&quot;tax&quot;: {&#xd;
+				&quot;uid&quot;: &quot;3&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 0.00,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 28444.00,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 28444.00,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 28444.00,&#xd;
+								&quot;taxAmount&quot;: 0.00,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 0.00,&#xd;
+								&quot;percentage&quot;: 0.000,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;9&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}, {&#xd;
+						&quot;name&quot;: &quot;IC&quot;,&#xd;
+						&quot;taxAmount&quot;: 2146,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 28444.0,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 2146,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 28444.0,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 28444.0,&#xd;
+								&quot;taxAmount&quot;: 2146,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 2146,&#xd;
+								&quot;percentage&quot;: 0,&#xd;
+								&quot;unitFixTaxAmount&quot;: 2146,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;98&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;02&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IC&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 30590.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 28444.00,&#xd;
+					&quot;taxExclusiveAmount&quot;: 28444.00,&#xd;
+					&quot;taxInclusiveAmount&quot;: 30590.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 30590.0&#xd;
+				}&#xd;
+			}&#xd;
+		}, {&#xd;
+			&quot;uid&quot;: 4,&#xd;
+			&quot;ean&quot;: &quot;7707175597139&quot;,&#xd;
+			&quot;description&quot;: &quot;Claro Plan CTeDaMTI2701.2GBAb&quot;,&#xd;
+			&quot;quantity&quot;: 1.0,&#xd;
+			&quot;unitPrice&quot;: 58800.0,&#xd;
+			&quot;price&quot;: 58800.0,&#xd;
+			&quot;measureId&quot;: &quot;94&quot;,&#xd;
+			&quot;ivaTaxId&quot;: &quot;3&quot;,&#xd;
+			&quot;ipoTaxId&quot;: &quot;13&quot;,&#xd;
+			&quot;stampTax&quot;: 0,&#xd;
+			&quot;kit&quot;: false,&#xd;
+			&quot;bagItem&quot;: false,&#xd;
+			&quot;concession&quot;: true,&#xd;
+			&quot;referenceData&quot;: &quot;890903407-9&quot;,&#xd;
+			&quot;discounts&quot;: [],&#xd;
+			&quot;tax&quot;: {&#xd;
+				&quot;uid&quot;: &quot;4&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;INC&quot;,&#xd;
+						&quot;taxAmount&quot;: 1912.19,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 47804.88,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 47804.88,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 47804.88,&#xd;
+								&quot;taxAmount&quot;: 1912.19,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 1912.19,&#xd;
+								&quot;percentage&quot;: 0.040,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;13&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;04&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;INC&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}, {&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 9082.93,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 47804.88,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 47804.88,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 47804.88,&#xd;
+								&quot;taxAmount&quot;: 9082.93,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 9082.93,&#xd;
+								&quot;percentage&quot;: 0.190,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;3&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 58800.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 47804.88,&#xd;
+					&quot;taxExclusiveAmount&quot;: 47804.88,&#xd;
+					&quot;taxInclusiveAmount&quot;: 58800.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 58800.0&#xd;
+				}&#xd;
+			}&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;clientAcquirerType&quot;: &quot;13&quot;,&#xd;
+	&quot;amountWithoutTaxes&quot;: 87196.86,&#xd;
+	&quot;resolution&quot;: {&#xd;
+		&quot;number&quot;: 18760000001,&#xd;
+		&quot;date&quot;: &quot;2019/01/19&quot;,&#xd;
+		&quot;vtoDate&quot;: &quot;2030/01/19&quot;,&#xd;
+		&quot;minValue&quot;: 1,&#xd;
+		&quot;maxValue&quot;: 5000000&#xd;
+	},&#xd;
+	&quot;clientLocation&quot;: {&#xd;
+		&quot;cityCode&quot;: &quot;25899&quot;,&#xd;
+		&quot;cityName&quot;: &quot;Zipaquira&quot;,&#xd;
+		&quot;departmentName&quot;: &quot;Cundinamarca&quot;&#xd;
+	},&#xd;
+	&quot;payment&quot;: {&#xd;
+		&quot;way&quot;: &quot;1&quot;,&#xd;
+		&quot;mode&quot;: &quot;1&quot;,&#xd;
+		&quot;credit&quot;: false&#xd;
+	},&#xd;
+	&quot;taxCalculationResponse&quot;: {&#xd;
+		&quot;lines&quot;: [{&#xd;
+				&quot;uid&quot;: &quot;0&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 0.00,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 0.00,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 0.00,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 0.00,&#xd;
+								&quot;taxAmount&quot;: 0.00,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 0.00,&#xd;
+								&quot;percentage&quot;: 0.000,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;12&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}, {&#xd;
+						&quot;name&quot;: &quot;Bolsas&quot;,&#xd;
+						&quot;taxAmount&quot;: 30,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 0.0,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 30,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 0.0,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 0.0,&#xd;
+								&quot;taxAmount&quot;: 30,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 30,&#xd;
+								&quot;percentage&quot;: 0,&#xd;
+								&quot;unitFixTaxAmount&quot;: 30,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;22&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;22&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;Bolsas&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 30.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 0.00,&#xd;
+					&quot;taxExclusiveAmount&quot;: 0.00,&#xd;
+					&quot;taxInclusiveAmount&quot;: 30.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 30.0&#xd;
+				}&#xd;
+			}, {&#xd;
+				&quot;uid&quot;: &quot;1&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 942.02,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 4957.98,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 4957.98,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 4957.98,&#xd;
+								&quot;taxAmount&quot;: 942.02,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 942.02,&#xd;
+								&quot;percentage&quot;: 0.190,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;3&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 5900.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 4957.98,&#xd;
+					&quot;taxExclusiveAmount&quot;: 4957.98,&#xd;
+					&quot;taxInclusiveAmount&quot;: 5900.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 5900.0&#xd;
+				}&#xd;
+			}, {&#xd;
+				&quot;uid&quot;: &quot;2&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 0.00,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 5990.00,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 5990.00,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 5990.00,&#xd;
+								&quot;taxAmount&quot;: 0.00,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 0.00,&#xd;
+								&quot;percentage&quot;: 0.000,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;9&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 5990.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 5990.00,&#xd;
+					&quot;taxExclusiveAmount&quot;: 5990.00,&#xd;
+					&quot;taxInclusiveAmount&quot;: 5990.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 5990.0&#xd;
+				}&#xd;
+			}, {&#xd;
+				&quot;uid&quot;: &quot;3&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 0.00,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 28444.00,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 28444.00,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 28444.00,&#xd;
+								&quot;taxAmount&quot;: 0.00,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 0.00,&#xd;
+								&quot;percentage&quot;: 0.000,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;9&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}, {&#xd;
+						&quot;name&quot;: &quot;IC&quot;,&#xd;
+						&quot;taxAmount&quot;: 2146,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 28444.0,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 2146,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 28444.0,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 28444.0,&#xd;
+								&quot;taxAmount&quot;: 2146,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 2146,&#xd;
+								&quot;percentage&quot;: 0,&#xd;
+								&quot;unitFixTaxAmount&quot;: 2146,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;98&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;02&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IC&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 30590.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 28444.00,&#xd;
+					&quot;taxExclusiveAmount&quot;: 28444.00,&#xd;
+					&quot;taxInclusiveAmount&quot;: 30590.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 30590.0&#xd;
+				}&#xd;
+			}, {&#xd;
+				&quot;uid&quot;: &quot;4&quot;,&#xd;
+				&quot;schemes&quot;: [{&#xd;
+						&quot;name&quot;: &quot;INC&quot;,&#xd;
+						&quot;taxAmount&quot;: 1912.19,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 47804.88,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 47804.88,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 47804.88,&#xd;
+								&quot;taxAmount&quot;: 1912.19,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 1912.19,&#xd;
+								&quot;percentage&quot;: 0.040,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;13&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;04&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;INC&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}, {&#xd;
+						&quot;name&quot;: &quot;IVA&quot;,&#xd;
+						&quot;taxAmount&quot;: 9082.93,&#xd;
+						&quot;taxAmountWithOutDiscount&quot;: 47804.88,&#xd;
+						&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+						&quot;details&quot;: [{&#xd;
+								&quot;taxableAmount&quot;: 47804.88,&#xd;
+								&quot;taxableAmountWithOutDiscounts&quot;: 47804.88,&#xd;
+								&quot;taxAmount&quot;: 9082.93,&#xd;
+								&quot;taxAmountWithOutDiscounts&quot;: 9082.93,&#xd;
+								&quot;percentage&quot;: 0.190,&#xd;
+								&quot;unitFixTaxAmount&quot;: 0,&#xd;
+								&quot;unitQuantity&quot;: 1.0,&#xd;
+								&quot;taxId&quot;: &quot;3&quot;,&#xd;
+								&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+								&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+							}&#xd;
+						]&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;discountDetails&quot;: [],&#xd;
+				&quot;price&quot;: 58800.0,&#xd;
+				&quot;total&quot;: {&#xd;
+					&quot;lineExtensionAmount&quot;: 47804.88,&#xd;
+					&quot;taxExclusiveAmount&quot;: 47804.88,&#xd;
+					&quot;taxInclusiveAmount&quot;: 58800.0,&#xd;
+					&quot;allowanceTotalAmount&quot;: 0,&#xd;
+					&quot;chargeTotalAmount&quot;: 0,&#xd;
+					&quot;payableAmount&quot;: 58800.0&#xd;
+				}&#xd;
+			}&#xd;
+		],&#xd;
+		&quot;schemes&quot;: [{&#xd;
+				&quot;name&quot;: &quot;INC&quot;,&#xd;
+				&quot;taxAmount&quot;: 1912.19,&#xd;
+				&quot;taxAmountWithOutDiscount&quot;: 47804.88,&#xd;
+				&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+				&quot;details&quot;: [{&#xd;
+						&quot;taxableAmount&quot;: 47804.88,&#xd;
+						&quot;taxableAmountWithOutDiscounts&quot;: 47804.88,&#xd;
+						&quot;taxAmount&quot;: 1912.19,&#xd;
+						&quot;taxAmountWithOutDiscounts&quot;: 1912.19,&#xd;
+						&quot;percentage&quot;: 0.040,&#xd;
+						&quot;unitFixTaxAmount&quot;: 0,&#xd;
+						&quot;unitQuantity&quot;: 1.0,&#xd;
+						&quot;taxId&quot;: &quot;13&quot;,&#xd;
+						&quot;taxSchemeId&quot;: &quot;04&quot;,&#xd;
+						&quot;taxSchemeName&quot;: &quot;INC&quot;&#xd;
+					}&#xd;
+				]&#xd;
+			}, {&#xd;
+				&quot;name&quot;: &quot;IVA&quot;,&#xd;
+				&quot;taxAmount&quot;: 10024.95,&#xd;
+				&quot;taxAmountWithOutDiscount&quot;: 87196.86,&#xd;
+				&quot;unitFixedTaxAmount&quot;: 0,&#xd;
+				&quot;details&quot;: [{&#xd;
+						&quot;taxableAmount&quot;: 52762.86,&#xd;
+						&quot;taxableAmountWithOutDiscounts&quot;: 52762.86,&#xd;
+						&quot;taxAmount&quot;: 10024.95,&#xd;
+						&quot;taxAmountWithOutDiscounts&quot;: 10024.95,&#xd;
+						&quot;percentage&quot;: 0.190,&#xd;
+						&quot;unitFixTaxAmount&quot;: 0.00,&#xd;
+						&quot;unitQuantity&quot;: 2.0,&#xd;
+						&quot;taxId&quot;: &quot;3&quot;,&#xd;
+						&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+						&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+					}, {&#xd;
+						&quot;taxableAmount&quot;: 34434.00,&#xd;
+						&quot;taxableAmountWithOutDiscounts&quot;: 34434.00,&#xd;
+						&quot;taxAmount&quot;: 0.00,&#xd;
+						&quot;taxAmountWithOutDiscounts&quot;: 0.00,&#xd;
+						&quot;percentage&quot;: 0.000,&#xd;
+						&quot;unitFixTaxAmount&quot;: 0.00,&#xd;
+						&quot;unitQuantity&quot;: 2.0,&#xd;
+						&quot;taxId&quot;: &quot;9&quot;,&#xd;
+						&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+						&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+					}, {&#xd;
+						&quot;taxableAmount&quot;: 0.00,&#xd;
+						&quot;taxableAmountWithOutDiscounts&quot;: 0.00,&#xd;
+						&quot;taxAmount&quot;: 0.00,&#xd;
+						&quot;taxAmountWithOutDiscounts&quot;: 0.00,&#xd;
+						&quot;percentage&quot;: 0.000,&#xd;
+						&quot;unitFixTaxAmount&quot;: 0,&#xd;
+						&quot;unitQuantity&quot;: 1.0,&#xd;
+						&quot;taxId&quot;: &quot;12&quot;,&#xd;
+						&quot;taxSchemeId&quot;: &quot;01&quot;,&#xd;
+						&quot;taxSchemeName&quot;: &quot;IVA&quot;&#xd;
+					}&#xd;
+				]&#xd;
+			}, {&#xd;
+				&quot;name&quot;: &quot;IC&quot;,&#xd;
+				&quot;taxAmount&quot;: 2146,&#xd;
+				&quot;taxAmountWithOutDiscount&quot;: 28444.0,&#xd;
+				&quot;unitFixedTaxAmount&quot;: 2146,&#xd;
+				&quot;details&quot;: [{&#xd;
+						&quot;taxableAmount&quot;: 28444.0,&#xd;
+						&quot;taxableAmountWithOutDiscounts&quot;: 28444.0,&#xd;
+						&quot;taxAmount&quot;: 2146,&#xd;
+						&quot;taxAmountWithOutDiscounts&quot;: 2146,&#xd;
+						&quot;percentage&quot;: 0,&#xd;
+						&quot;unitFixTaxAmount&quot;: 2146,&#xd;
+						&quot;unitQuantity&quot;: 1.0,&#xd;
+						&quot;taxId&quot;: &quot;98&quot;,&#xd;
+						&quot;taxSchemeId&quot;: &quot;02&quot;,&#xd;
+						&quot;taxSchemeName&quot;: &quot;IC&quot;&#xd;
+					}&#xd;
+				]&#xd;
+			}, {&#xd;
+				&quot;name&quot;: &quot;Bolsas&quot;,&#xd;
+				&quot;taxAmount&quot;: 30,&#xd;
+				&quot;taxAmountWithOutDiscount&quot;: 0.0,&#xd;
+				&quot;unitFixedTaxAmount&quot;: 30,&#xd;
+				&quot;details&quot;: [{&#xd;
+						&quot;taxableAmount&quot;: 0.0,&#xd;
+						&quot;taxableAmountWithOutDiscounts&quot;: 0.0,&#xd;
+						&quot;taxAmount&quot;: 30,&#xd;
+						&quot;taxAmountWithOutDiscounts&quot;: 30,&#xd;
+						&quot;percentage&quot;: 0,&#xd;
+						&quot;unitFixTaxAmount&quot;: 30,&#xd;
+						&quot;unitQuantity&quot;: 1.0,&#xd;
+						&quot;taxId&quot;: &quot;22&quot;,&#xd;
+						&quot;taxSchemeId&quot;: &quot;22&quot;,&#xd;
+						&quot;taxSchemeName&quot;: &quot;Bolsas&quot;&#xd;
+					}&#xd;
+				]&#xd;
+			}&#xd;
+		],&#xd;
+		&quot;total&quot;: {&#xd;
+			&quot;lineExtensionAmount&quot;: 87196.86,&#xd;
+			&quot;taxExclusiveAmount&quot;: 87196.86,&#xd;
+			&quot;taxInclusiveAmount&quot;: 101310.0,&#xd;
+			&quot;allowanceTotalAmount&quot;: 0,&#xd;
+			&quot;chargeTotalAmount&quot;: 0,&#xd;
+			&quot;payableAmount&quot;: 101310.0&#xd;
+		}&#xd;
+	},&#xd;
+	&quot;supplier&quot;: {&#xd;
+		&quot;rut&quot;: &quot;8909009431&quot;,&#xd;
+		&quot;countryName&quot;: &quot;Colombia&quot;,&#xd;
+		&quot;departmentName&quot;: &quot;Antioquia&quot;,&#xd;
+		&quot;cityCode&quot;: &quot;05001&quot;,&#xd;
+		&quot;cityName&quot;: &quot;BOGOTA&quot;,&#xd;
+		&quot;administrator&quot;: &quot;COLOMBIANA DE COMERCIO S.A.&quot;,&#xd;
+		&quot;address&quot;: &quot;CARRERA 30 # 10 - 77&quot;,&#xd;
+		&quot;postalCode&quot;: &quot;050015&quot;,&#xd;
+		&quot;name&quot;: &quot;Administrador: Rodolfo Orjuela&quot;,&#xd;
+		&quot;mail&quot;: &quot;Rodolfo.orjuela@alkosto.com.co&quot;&#xd;
+	},&#xd;
+	&quot;creditNote&quot;: false,&#xd;
+	&quot;collectionTicket&quot;: false,&#xd;
+	&quot;technicalKey&quot;: &quot; fc8eac422eba16e22ffd8c6f94b3f40a6e38162c&quot;,&#xd;
+	&quot;ticketNumber&quot;: &quot;271691&quot;,&#xd;
+	&quot;clientDocumentTypeId&quot;: 1&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/transaction/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
